@@ -1,0 +1,21 @@
+{%extends 'users/base.html'%}
+{%block content%}
+
+<form method = 'POST' enctype = "multipart/form-data">
+    {%csrf_token%}
+    <span>
+      <p class='p11'>Имя </p><p class='p1'> 
+        {{form.nameord}} </p>
+      <p class='p12'>Фамилия<p><p class='p2'> 
+      {{form.lastnameord}}</p>
+      <p class='p13'>Комментарии </p> <p>
+      {{form.descriptionord}} </p>
+      <p class='p14'>Адрес </p><p class='p4'>
+      {{form.adress}} </p>
+      <p class='p15'>Контакты</p><p class='p5'>
+      {{form.contact}} </p>
+      
+      <button class = 'sub'type='submit' style='--clr: white'><a href = '{%url "products:basket_removeall" %}'>Отправить</p><i></i></button>
+    </span>  
+</form> 
+    {%endblock%}
