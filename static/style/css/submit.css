@@ -1,0 +1,21 @@
+.lgi {    border-block: inherit;
+    border: solid;
+    border-color: grey;
+    padding: 20px;
+    border-style: ridge;
+    margin: 2px;
+    background-color: white;
+    /* border-spacing: 45px; */
+    border-block-end-color: pink;
+    /* border-collapse: initial; */
+    border-collapse: collapse;
+    font-family: cursive;
+    border-radius: 0.5em; transition: 0.4s;}
+.lgi:hover {transform: scale(1.1); background-color: pink;}
+
+body{ background: url("../img/oboi7.com-60830.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;}

@@ -1,0 +1,15 @@
+.container {display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+margin-left: 150px;}
+.enter{margin-left: -162px;}
+
+body {
+    background: url("../img/1683390026_oir-mobi-p-sakura-fon-foni-pinterest-1.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;
+}

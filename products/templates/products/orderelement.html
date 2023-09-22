@@ -1,16 +1,30 @@
 
 {%load static%}
    
+
 <html lang="en">
-        <head>
-            <meta charset="utf-8"/>
-            
-        </head>
-        <body class="bg-primary">
-            <p>revrrev</p>
-          
-            <a class="btn btn-success btn-lg float-right" href="{%url "products:basket_removeallfinal"%}">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="{%static 'style/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'style/css/submit.css'%}" rel="stylesheet">
+    
+</head>
+        <body>
+            <div class='bt' style='display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            align-content: space-around;
+            height: 100%;'>
+            <a class="lgi" href="{%url "products:basket_removeallfinal"%}">
                 Подтвердить
             </a>
+        </div>
         </body>
  </html>

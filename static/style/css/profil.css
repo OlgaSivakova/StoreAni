@@ -1,0 +1,39 @@
+body {
+    background: url("../img/1683390026_oir-mobi-p-sakura-fon-foni-pinterest-1.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;
+}
+
+.userp{    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;}
+.row{display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse; width: 90%;}
+
+    .lgi {    border-block: inherit;
+        border: solid;
+        border-color: grey;
+        padding: 2;
+        border-style: ridge;
+        margin: 2px;
+        /* border-spacing: 45px; */
+        border-block-end-color: pink;
+        /* border-collapse: initial; */
+        border-collapse: collapse;
+        font-family: cursive;
+        border-radius: 0.5em; transition: 0.4s;}
+        .lgi:hover {transform: scale(1.1); background-color: pink;}
+.bask {  border: solid;
+    border-radius: 2em;
+    border-color: grey;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;}
+.container1{    margin-left: 342px;}

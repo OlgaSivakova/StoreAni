@@ -1,14 +1,18 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
-from products.models import Product, ProductCategory, Product, Basket, OrderProduct
+from products.models import Product, ProductCategory, Product, Basket
 from users.models import User
 from django.contrib.auth.decorators import login_required #запрещает доступ к отдельным элементам без авторизации
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.urls import reverse
+from users.forms import UserCreationForm
+from django.contrib import auth
 # Create your views here.
 
 def index(request):
-    return render(request, 'products/index.html')
+    us = User.objects.filter(username=request.user)
+    
+    return render(request, 'products/index.html', {'us': us})
 
 
 def products(request, category_id=None, page_number=1): #категория изначально до клика не передаётся
@@ -21,7 +25,7 @@ def products(request, category_id=None, page_number=1): #категория из
     if category_id:        
         posts = Product.objects.filter(category_id=category_id) 
         
-    per_page=3
+    per_page=6
     paginator = Paginator(posts, per_page)
     products_paginator = paginator.page(page_number)
     context = {
@@ -48,6 +52,7 @@ def basket_add(request, product_id):
         basket = baskets.first()
         basket.quantity+=1
         basket.save()
+    
     return HttpResponseRedirect(request.META['HTTP_REFERER']) #возвращение на ту страницу, где пользователь был
 
 def basket_remove(request, basket_id):
@@ -59,10 +64,13 @@ def basket_removeall(request, user=None):
     baskets = Basket.objects.filter(user=request.user)
     a = []
     for basket in baskets:
+        a.append(basket.user)
         a.append(basket.product)
         a.append(basket.quantity)
+        a.append(basket.created_timestamp)
     with open('text.txt', 'a', encoding='utf-8') as f:
-        f.write(str(a))
+        f.write(str(a) + '\n')
+        
     
     return render(request, 'products/orderelement.html')
 

@@ -1,0 +1,120 @@
+body {
+    background: url("../img/cherry-blossom-branch-with-sakura-flower-sakura-white-background-cherry-blossom-flower-blooming_144721-1824.avif") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;
+}
+
+
+
+
+.lg{display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.25rem;}
+.lgi {    border-block: inherit;
+    border: solid;
+    border-color: grey;
+    padding: 20px;
+    border-style: ridge;
+    margin: 2px;
+    /* border-spacing: 45px; */
+    border-block-end-color: pink;
+    /* border-collapse: initial; */
+    border-collapse: collapse;
+    font-family: cursive;
+    border-radius: 0.5em; transition: 0.4s;}
+.lgi:hover {transform: scale(1.1); background-color: pink;}
+
+.backtostore {text-decoration: none; color:rgb(119, 119, 119); transition: 0.4s;}
+.backtostore:hover{transform: scale(3.0);text-decoration: none; color:rgb(255, 19, 109)}
+.ct {    width: 300px;}
+
+.section-g {
+    height: 600px;
+    background-color: #000;
+    position: relative;
+  }
+  .content-g {
+    width: 1280px/1366px * 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+  }
+  .slider{
+    width: 1100px;
+    height: 500px;
+    overflow: hidden;    
+}
+.middle{
+    position: absolute;
+    top: -32.5%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 752px;
+    height: 624px;
+    top: -251px;
+}
+.navigation{
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.bar{
+    height: 8px;
+    width: 30px;
+    margin: 6px;
+    cursor: pointer;
+    background-color: #0a0a0a69;
+    opacity: .5;
+    border-radius: 10px;
+    transition: all .4s ease;
+}
+.bar:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+#contact {        position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+  
+  }
+  input[name="r"] {
+      position: absolute;
+      visibility: hidden;
+  }
+  
+  .slides{
+      width: 400%;
+      height: 100%;
+      display: flex;
+  }
+  .slide{
+      width: 25%;
+      transition: all .6s ease;   
+  }
+  .slide img{
+      width: 100%;
+      height: 100%;
+  }
+  #r1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+    margin-left: -25%;
+}
+
+#r3:checked ~ .s1 {
+    margin-left: -50%;
+}
+
+#r4:checked ~ .s1 {
+    margin-left: -75%;
+}

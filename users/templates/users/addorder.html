@@ -1,21 +1,47 @@
-{%extends 'users/base.html'%}
-{%block content%}
+{%load static%}
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{title}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static 'style/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'style/css/orde.css'%}" rel="stylesheet">
+
+<body>
+<div>
+        {%if form.errors%}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert"
+                     style="margin-top: 50px; 
+                     height: 150px;">
+                    {{form.errors}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {%endif%}       
 
 <form method = 'POST' enctype = "multipart/form-data">
     {%csrf_token%}
     <span>
-      <p class='p11'>Имя </p><p class='p1'> 
-        {{form.nameord}} </p>
-      <p class='p12'>Фамилия<p><p class='p2'> 
-      {{form.lastnameord}}</p>
-      <p class='p13'>Комментарии </p> <p>
+      <h1 class="mt-5"><a class='logo' style='text-decoration: none; color:white;' href={%url 'index'%}>ANISTORE</a></h1>
+    
+      <p class='p'><p>Электронная почта<p class='d'> 
+      {{form.email}}</p>
+      <p class='p'>Комментарии </p> <p class='d'>
       {{form.descriptionord}} </p>
-      <p class='p14'>Адрес </p><p class='p4'>
+      <p class='p'>Адрес почты</p><p class='d'>
       {{form.adress}} </p>
-      <p class='p15'>Контакты</p><p class='p5'>
+      <p class='p'>Контактный телефон</p><p class='d'>
       {{form.contact}} </p>
       
-      <button class = 'sub'type='submit' style='--clr: white'><a href = '{%url "products:basket_removeall" %}'>Отправить</p><i></i></button>
+      
+      <p class='s'><input type='submit' class='lgi' value='Заказать'></p>
     </span>  
 </form> 
-    {%endblock%}
+</div>
+</body>

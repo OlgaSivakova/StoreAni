@@ -1,38 +1,93 @@
 
 
-{% extends 'products/base.html' %}
 {%load static%}
-{%block css%} <link href="{%static 'vendor/css/index.css'%}" rel="stylesheet">{%endblock%}
-{%block content%}
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{title}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static 'style/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'style/css/bae.css'%}" rel="stylesheet">
+    <link href="{%static 'style/css/ind.css'%}" rel="stylesheet">
+     <link href="{%static 'style/css/product.css'%}" rel="stylesheet">
+
+<nav class='enter'>
+    <div class="container">
+        
+       
+           
+                <p class="nav-item">
+                    <a class="nav-link" style='color: white;' href="{%url 'products:indexp'%}">Магазин</a>
+                </p>
+                {% if user.is_authenticated %}
+                <p class="nav-item">
+                    <a class="nav-link"> | </a>
+                </p>
+                <p class="nav-item">
+                    <a class="nav-link" style='color: white;' href="{%url 'users:profile'%}">Профиль </a>
+                </p>
+
+                  
+                            <a class="nav-item" href="{%url 'users:logout'%}">
+                                <img style='width: 50%; margin-top: 6px;'src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZElEQVR4nO2ZTUoDQRCFv1WOkfi7nwhewIleSMWFa8UTxOQEuYFnMUESY7YGjQpuAiMDvSgGxCxedyzoD5rs3qvXM11paiCTyWT+OzvAEFgAa6ASrHXQGwCdmMWfAR+ion9bK6AXa+djF1+ZEG11gKExmAInQEukXeuUwMx43CNmYcTr4mNQGo+5WtweWNXON2kB38HjSy1u39GY3ACf4ddlgGjkABuyD1wABzh9AuPgsQSOPAZ4ND7SEKkCdEPh8hApD3EBvBq/N+DYWxcq1CG20UYLZYi/AtTt7xy4Eq9Rw3sZzok8wFOiq3YFTLwHGMcIsAdcA3fi9ZDqFXJ/iNUUntto4fmPrOv9KjHxfpmber9OHwKXwK5aeBttVEoOsCG3scYq7gdbLwlGiz3j8awWHxjxWTBTDndPG8PdPmI6Yeyd4rr8HmO8Ttj1VYLiSyLSDo93Lv7EVOv1Y+18JpPJkIQfKpKPLTg0kzEAAAAASUVORK5CYII=">
+                            </a>
+                        
+                {%else%}
+                    <p class="nav-item">
+                        <a class="nav-link" style='color: white;'> | </a>
+                    </p>
+                
+                
+                    <a class="nav-link" href="{%url 'users:login'%}" style='color: white; '> Войти </a>
+                
+                {%endif%}
+                
+                    </ul>
+                </li>
+           
+        
+    </div>
+</nav>
 <section>
     <!--    <div class="alert alert-light text-center" role="alert">-->
     <!--        Информационное сообщение-->
     <!--    </div>-->
     <div class="container">
-        <div class="row">
+        <div class="rowlogo">
             <div class="col-lg-6">
-                <h1 class="mt-5">Store</h1>
-                <p>
-                    Новые образы и лучшие бренды на Store.
-                    Бесплатная доставка по всему миру! Аутлет: до -70% Собственный бренд. -20% новым покупателям.
+                <h1 class="mt-5"><a class='logo' style='text-decoration: none; color:white;' href={%url 'index'%}>ANISTORE</a></h1>
+                <p class='hellotext'>
+                    
                     {%if user.is_authenticated%}
-                    <div class='lin'><a href=''>Logout</a> | <a href=''>Add post</a></div>
+                   
+                    Добро пожаловать в ANISTORE, <b> {%for i in us%}{{i.username}}{%endfor%}</b>! Мы - добровольная сеть магазинов 
+                    по продаже аниме-атрибутики в Беларуси! 
+                  
+                    <div class='lin'><a href="{%url 'users:logout'%}">Logout</a> 
                     
                     {%else%}
-                    <div class='lin'><a href=''>Login</a> | <a href=''>Registrate</a> </div>
+                    Зарагестрируйся, чтобы сделать первые покупки в ANISTORE!
+                    <div class='lin'><a href="{%url 'users:login'%}">Login</a> 
                     
                     {%endif%}
                 </p>
                 <button id="start-purchase-btn" type="button" class="btn btn-lg">
                     <a id="start-purchase-link" href="{%url 'products:indexp'%}">
-                        Начать покупки
+                        Перейти в магазин
                     </a>
                 </button>
             </div>
         </div>
     </div>
 </section>
-{%endblock%}
+
 
     
 

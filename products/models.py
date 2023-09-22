@@ -54,9 +54,7 @@ class Basket(models.Model):
     
     def sum(self):
         return self.product.price*self.quantity # к методу потом можно обращаться в шаблоне, он будет считать все показатели для товаров, которые попадают в модельку
-    
-class OrderProduct(models.Model):
-    us = models.TextField(null=True, blank=True)
+
     
 
     

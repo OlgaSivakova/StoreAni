@@ -1,0 +1,40 @@
+body { background: url("../img/1673281858_foni-club-p-oboi-anime-privetstvie-10.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;}
+
+.reg {display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    margin-right: 337px;}
+.container3 {display: block;
+    margin-left: 381px;
+    /* margin-right: auto; */
+    align-items: center;
+    margin-top: 180px;}
+    .lgi {   border-block: inherit;
+        border: solid;
+        border-color: grey;
+        padding: 2;
+        border-style: ridge;
+        margin: 2px;
+        /* border-spacing: 45px; */
+        border-block-end-color: pink;
+        /* border-collapse: initial; */
+        border-collapse: collapse;
+        font-family: cursive;
+        border-radius: 0.5em; 
+        padding: 8px; transition: 0.4s;}
+    .lgi:hover {transform: scale(1.1); background-color: pink;}
+form {    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.small {    display: flex;
+    flex-direction: column;
+    align-items: center; color:white}

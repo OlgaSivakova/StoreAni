@@ -1,0 +1,52 @@
+body { background: url("../img/akspic.ru-anime-anime_art-zhivopis-poster-art-7680x4296.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;}
+
+form{    width: 30%;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;}
+div{display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: center;
+}
+.d{      text-align: center;
+    color: white;
+    display: block;
+    margin-left: -97px;
+    margin-right: auto;}
+#id_nameord, #id_email, #id_descriptionord, #id_adress, #id_contact {    border-radius: 2em;
+    width: 150%;
+    height: 10%;}
+p {        margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-right: -25px;
+    flex-direction: column;}
+    .lgi {   border-block: inherit;
+        border: solid;
+        border-color: grey;
+        padding: 2;
+        border-style: ridge;
+        margin: 2px;
+        /* border-spacing: 45px; */
+        border-block-end-color: pink;
+        /* border-collapse: initial; */
+        border-collapse: collapse;
+        font-family: cursive;
+        border-radius: 0.5em; 
+        padding: 8px; transition: 0.4s;}
+    .lgi:hover {transform: scale(1.1); background-color: pink;}

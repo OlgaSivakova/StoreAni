@@ -1,0 +1,29 @@
+body {
+    background: url("../img/171661-skejtbord-anime-devushka_skejtbordy-anime_art-skejtbording-3840x2160.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;
+}
+.hellotext{    color: white;}
+#start-purchase-btn {
+    background-color: #23364e;
+    border-color: #23364e;
+    color: white;
+}
+.logo{color:white; text-decoration: none;}
+
+#start-purchase-link {
+    text-decoration: none;
+    color: white;
+}
+.container .rowlogo{    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: row-reverse;
+    align-content: stretch;
+    justify-content: space-evenly;
+    width: 1000%;}

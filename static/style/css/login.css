@@ -1,0 +1,32 @@
+ .lgi {   border-block: inherit;
+    border: solid;
+    border-color: grey;
+    padding: 2;
+    border-style: ridge;
+    margin: 2px;
+    /* border-spacing: 45px; */
+    border-block-end-color: pink;
+    /* border-collapse: initial; */
+    border-collapse: collapse;
+    font-family: cursive;
+    border-radius: 0.5em; 
+    padding: 8px; transition: 0.4s;}
+.lgi:hover {transform: scale(1.1); background-color: pink;}
+.autor {width: 60%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-end;}
+.container2{    margin-top: 145px;
+    width: 90%;
+    display: block;
+    margin-left: 144px;
+    }
+
+body { background: url("../img/akspic.ru-anime-anime_art-zhivopis-poster-art-7680x4296.jpg") no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 56px;}

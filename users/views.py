@@ -1,9 +1,10 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.urls import reverse
 from users.models import User
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm, OrderForm
 from django.contrib import auth, messages
 from products.models import Basket
+from users.models import Order
 from django.contrib.auth.decorators import login_required
 
 
@@ -62,17 +63,24 @@ def logout(request):
     return HttpResponseRedirect(reverse('index'))
 
 def addorder(request):
-    
+    error = ''
     if request.method == "POST":
+       
         form = OrderForm(request.POST)
         if form.is_valid():
-            
-    
-
-            form.save()
-
-            return HttpResponseRedirect(reverse('index'))
+            order = Order()
+            order.nameord= request.user
+            order.email = form.cleaned_data['email']
+            order.descriptionord = form.cleaned_data['descriptionord']
+            order.adress = form.cleaned_data['adress']
+            order.contact= form.cleaned_data['contact']
+            order.save()
+            return redirect('products:basket_removeall')
+        else:
+            error = form.errors
+           
     else:
         form = OrderForm()
 
-    return render(request, 'users/addorder.html', {'form': form})
+    return render(request, 'users/addorder.html', {'form': form, 'errors':error})
+  
