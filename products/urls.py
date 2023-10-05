@@ -7,6 +7,8 @@ urlpatterns = [
     path('products/', products, name='indexp'),
     path('category/<int:category_id>/', products, name='category'),
     path('page/<int:page_number>/', products, name='paginator'),
+    #что передаёся в урлах вместе с адресом, обязаьтельно
+    # должно быть указано в функции во вью
     path('<int:product_id>/',productelement, name='element'),
     path('baskets/add/<int:product_id>/', basket_add, name='basket_add'),
     path('baskets/remove/<int:basket_id>/', basket_remove, name='basket_remove'),

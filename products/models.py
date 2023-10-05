@@ -34,7 +34,8 @@ class Product(models.Model):
 class BasketQerrySet(models.QuerySet): #обращение ко всем объектам в словаре квэрри если надо в темплейте вывести всё вне цикла
     def total_sum(self):
         
-        return sum(basket.sum() for basket in self)
+        return sum(basket.sum() for basket in self)#сумирует 
+    #сумму вссех товаров
     
     def total_quantity(self):
         

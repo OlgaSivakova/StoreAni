@@ -17,17 +17,17 @@ def index(request):
 
 def products(request, category_id=None, page_number=1): #категория изначально до клика не передаётся
     
-    searchq = request.GET.get('search', '')
+    searchq = request.GET.get('search', '') #поиск по странице
     if searchq:
             posts = Product.objects.filter(Q(name__iregex =searchq) | Q(description__iregex=searchq))
     else:
             posts = Product.objects.all()
     if category_id:        
-        posts = Product.objects.filter(category_id=category_id) 
+        posts = Product.objects.filter(category_id=category_id)  #если БД связаны, токакой айдишник у БД, такой и у поста с продуктами
         
-    per_page=6
-    paginator = Paginator(posts, per_page)
-    products_paginator = paginator.page(page_number)
+    per_page=6 #столько объектов должно быть на странице
+    paginator = Paginator(posts, per_page) # функция пагинатор
+    products_paginator = paginator.page(page_number) #новая моделька для передачи в темплейт
     context = {
         'title': 'Store-каталог',
         'products': products_paginator,
@@ -43,13 +43,15 @@ def productelement(request,product_id):
 
 @login_required 
 def basket_add(request, product_id):
-    product = Product.objects.get(id=product_id)
+    product = Product.objects.get(id=product_id) #когда выбираешь 
+    #продукт получаешь его по айди
     baskets = Basket.objects.filter(user=request.user, product=product)
-    
+    #в корзину данного пользователя добавляется ЭТОТ товар
     if not baskets.exists():
         Basket.objects.create(user=request.user,product=product, quantity=1)
+        #если не было такого товара то создаём и автоматически сохр
     else:
-        basket = baskets.first()
+        basket = baskets.first() #прибавляешь к первому элементу и выводим 
         basket.quantity+=1
         basket.save()
     

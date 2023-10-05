@@ -5,7 +5,8 @@
 {%for basket in baskets%}
 <div class="card mb-3">
     <div class="card-body">
-        <h5 class="card-title">{{basket.product.name}}</h5>
+        <h5 class="card-title">{{basket.product.name}}</h5> <!--к корзине к ключу 
+            продукт и через него из таблицы продут вытягиваем нейм-->
         <p class="card-text">{{basket.product.description}}</p>
     </div>
     <ul class="list-group list-group-flush">

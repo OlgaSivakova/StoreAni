@@ -18,7 +18,7 @@ def login(request):
             password = request.POST['password']
             user = auth.authenticate(username=username, password=password) #так программа понимает, какие права есть у пользователя с такими данными
             if user:
-                auth.login(request, user)
+                auth.login(request, user) #залогинить
                 return HttpResponseRedirect(reverse('index'))
     else: #если гет, то просто отобразить саму форму
         form = UserLoginForm()
